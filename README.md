@@ -33,7 +33,7 @@ local BodyVelocity
 do
 	BodyVelocity = Instance.new("BodyVelocity")
 	BodyVelocity.Velocity = Vector3.zero
-	BodyVelocity.MaxForce = Vector3.new(300, 300, 300)
+	BodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
 	BodyVelocity.P = 1000
 
 	if _ENV.tween_bodyvelocity then
@@ -203,7 +203,7 @@ local CurrentTime = workspace:GetServerTimeNow()
 local function DealDamage(Enemies)
 	CurrentTime += 1
 
-	local Combo = 4
+	local Combo = math.random(4)
 	ToolEvent:FireServer("Effects", Combo)
 	CombatEvent:FireServer("DealDamage", {
 		CallTime = CurrentTime,
@@ -253,7 +253,7 @@ local function BringEnemies(Enemies, Target)
 		local RootPart = Enemy:FindFirstChild("HumanoidRootPart")
 
 		if RootPart then
-			RootPart.Size = Vector3.one * 40
+			RootPart.Size = Vector3.one * 30
 			RootPart.CFrame = Target
 		end
 	end
@@ -263,7 +263,7 @@ end
 
 local Libary =
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Library/refs/heads/main/V5/Source.lua"))()
-local Window = Libary:MakeWindow({ "Vox seas Hub", "discord: 👆", "rz-VoxSeas.json" })
+local Window = Libary:MakeWindow({ "Vox seas Hub", "Ez levelmax", "rz-VoxSeas.json" })
 
 local MainTab = Window:MakeTab({ "Farm", "Home" })
 
