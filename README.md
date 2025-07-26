@@ -65,12 +65,12 @@ function KillNpc(npc)
 		{ CFrame = npc.HumanoidRootPart.CFrame * CFrame.new(0, 6, 0) }
 	)
 	_G.mon = npc.Name
-	_G.Dis = CFrame.new(0, 0, 0)
+	_G.Dis = CFrame.new(0, 4, 0)
 	getgenv().auto = true
 
 	tween:Play()
 	tween.Completed:Wait()
-	while getgenv().auto do
+	while getgenv().auto dos
 		task.wait(0.01)
 		if _G.EquipTool == false then
 			EquipTool(_G.ToolName)
