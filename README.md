@@ -33,7 +33,7 @@ local BodyVelocity
 do
 	BodyVelocity = Instance.new("BodyVelocity")
 	BodyVelocity.Velocity = Vector3.zero
-	BodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+	BodyVelocity.MaxForce = Vector3.new(300, 300, 300)
 	BodyVelocity.P = 1000
 
 	if _ENV.tween_bodyvelocity then
@@ -263,7 +263,7 @@ end
 
 local Libary =
 	loadstring(game:HttpGet("https://raw.githubusercontent.com/tlredz/Library/refs/heads/main/V5/Source.lua"))()
-local Window = Libary:MakeWindow({ "Vox seas Hub", "discord: none", "rz-VoxSeas.json" })
+local Window = Libary:MakeWindow({ "Vox seas Hub", "discord: 👆", "rz-VoxSeas.json" })
 
 local MainTab = Window:MakeTab({ "Farm", "Home" })
 
