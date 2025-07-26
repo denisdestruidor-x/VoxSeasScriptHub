@@ -33,7 +33,7 @@ local BodyVelocity
 do
 	BodyVelocity = Instance.new("BodyVelocity")
 	BodyVelocity.Velocity = Vector3.zero
-	BodyVelocity.MaxForce = Vector3.new(math.huge, math.huge, math.huge)
+	BodyVelocity.MaxForce = Vector3.new(math.huge * 50, math.huge * 50, math.huge * 50)
 	BodyVelocity.P = 1000
 
 	if _ENV.tween_bodyvelocity then
@@ -203,7 +203,7 @@ local CurrentTime = workspace:GetServerTimeNow()
 local function DealDamage(Enemies)
 	CurrentTime += 1
 
-	local Combo = math.random(4)
+	local Combo = 4
 	ToolEvent:FireServer("Effects", Combo)
 	CombatEvent:FireServer("DealDamage", {
 		CallTime = CurrentTime,
@@ -243,7 +243,6 @@ local function GetClosestEnemies()
 				table.insert(Enemies, Enemy)
 			end
 		end
-
 		return Enemies
 	end
 end
@@ -253,7 +252,7 @@ local function BringEnemies(Enemies, Target)
 		local RootPart = Enemy:FindFirstChild("HumanoidRootPart")
 
 		if RootPart then
-			RootPart.Size = Vector3.one * 30
+			RootPart.Size = Vector3.one * 70
 			RootPart.CFrame = Target
 		end
 	end
@@ -286,6 +285,7 @@ do
 
 					if HumanoidRootPart then
 						PlayerTP(HumanoidRootPart.CFrame + Vector3.yAxis * 10)
+						BringEnemies(Enemies, HumanoidRootPart.CFrame + Vector3.yAxis * 10)
 						DealDamage(Enemies)
 						break
 					end
