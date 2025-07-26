@@ -73,7 +73,6 @@ function KillNpc(npc)
 			EquipTool(_G.ToolName)
 		end
 		tween:Play()
-		tween.Completed:Wait()
 		attack(npc)
 	end
 end
