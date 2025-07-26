@@ -285,7 +285,7 @@ do
 
 					if HumanoidRootPart then
 						PlayerTP(HumanoidRootPart.CFrame + Vector3.yAxis * 10)
-						BringEnemies(Enemies, HumanoidRootPart.CFrame + Vector3.new(0, -10, 0))
+						BringEnemies(Enemies, HumanoidRootPart.CFrame + Vector3.yAxis * -10)
 						DealDamage(Enemies)
 						break
 					end
