@@ -67,9 +67,9 @@ function KillNpc(npc)
 	_G.mon = npc.Name
 	_G.Dis = CFrame.new(0, 6, 0)
 	getgenv().auto = true
-	
-	local firstTime = true
+
 	tween:Play()
+	tween.Completed:Wait()
 	while getgenv().auto do
 		task.wait(0.01)
 		if _G.EquipTool == false then
