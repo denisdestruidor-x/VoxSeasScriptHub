@@ -65,7 +65,7 @@ function KillNpc(npc)
 		{ CFrame = npc.HumanoidRootPart.CFrame * CFrame.new(0, 6, 0) }
 	)
 	_G.mon = npc.Name
-	_G.Dis = CFrame.new(0, 5, 0)
+	_G.Dis = CFrame.new(0, 4, 0)
 	getgenv().auto = true
 
 	tween:Play()
