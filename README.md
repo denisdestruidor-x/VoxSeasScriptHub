@@ -69,23 +69,13 @@ function KillNpc(npc)
 	getgenv().auto = true
 	
 	local firstTime = true
-	
+	tween:Play()
 	while getgenv().auto do
 		task.wait(0.01)
 		if _G.EquipTool == false then
 			EquipTool(_G.ToolName)
 		end
-		
-		if firstTime then
-			-- First time: use tween
-			tween:Play()
-			tween.Completed:Wait()
-			firstTime = false
-		else
-			-- After first time: instant teleport
-			game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame * CFrame.new(0, 6, 0)
-		end
-		
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame * CFrame.new(0, 6, 0)
 		attack(npc)
 	end
 end
