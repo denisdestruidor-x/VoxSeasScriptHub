@@ -28,7 +28,7 @@ function attack(npc)
 			Results = {
 				npc,
 			},
-			Combo = 1,
+			Combo = 4,
 			DelayTime = 0.2,
 		},
 	}
@@ -65,7 +65,7 @@ function KillNpc(npc)
 		{ CFrame = npc.HumanoidRootPart.CFrame * CFrame.new(0, 6, 0) }
 	)
 	_G.mon = npc.Name
-	_G.Dis = CFrame.new(0, 6, 0)
+	_G.Dis = CFrame.new(0, 5, 0)
 	getgenv().auto = true
 
 	tween:Play()
@@ -77,6 +77,10 @@ function KillNpc(npc)
 		end
 		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame * CFrame.new(0, 6, 0)
 		attack(npc)
+		if npc.Humanoid.Health <= 0 then
+			getgenv.auto = false
+			break
+		end
 	end
 end
 
