@@ -75,7 +75,7 @@ function KillNpc(npc)
 		if _G.EquipTool == false then
 			EquipTool(_G.ToolName)
 		end
-		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame * CFrame.new(0, 6, 0)
+		game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = npc.HumanoidRootPart.CFrame * _G.Dis
 		attack(npc)
 		if npc.Humanoid.Health <= 0 then
 			getgenv.auto = false
